@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "cd out/server && node --conditions=react-server server.js",
+    "swc-src": "npx swc src -d out --strip-leading-paths --copy-files"
+  },
+  "dependencies": {
+    "react": "19.0.0-beta-94eed63c49-20240425",
+    "react-dom": "19.0.0-beta-94eed63c49-20240425",
+    "react-server-dom-esm": "npm:@kentcdodds/tmp-react-server-dom-esm@19.0.0-beta-94eed63c49-20240425"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.6"
+  }
+}
