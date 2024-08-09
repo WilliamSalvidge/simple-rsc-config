@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "cd out/server && node --conditions=react-server server.js",
+    "dev": "cd out/server && node --import ./loader/register-loader.js --conditions=react-server server.js",
     "swc-src": "npx swc src -d out --strip-leading-paths --copy-files"
   },
   "dependencies": {

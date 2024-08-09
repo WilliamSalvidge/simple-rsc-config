@@ -17,7 +17,9 @@ server.on('request', async (req, res)=>{
     }
     if (consts.rsc.test(req.url)) {
         console.log('in rsc');
-        const { pipe } = renderToPipeableStream(h(App));
+        const moduleBasePath = new URL('../ui', import.meta.url).href;
+        const { pipe } = renderToPipeableStream(h(App), moduleBasePath);
+        // const { pipe } = renderToPipeableStream(h(App));
         pipe(res);
         return;
     }
