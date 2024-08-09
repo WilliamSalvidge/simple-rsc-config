@@ -1,5 +1,5 @@
 import { Fragment, createElement as h } from 'react';
-import Super from './super.js'
+import { Super } from './super.js'
 
 export const App = async () => {
   await new Promise((res) => setTimeout(() => res('Hi'), 5000));

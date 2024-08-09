@@ -2,7 +2,7 @@
 
 import React, { Fragment, createElement as h } from 'react';
 
-const Super = () => {
+export const Super = () => {
   const [press, setPress] = React.useState(false);
 
   return (
@@ -19,4 +19,3 @@ const Super = () => {
   )
 }
 
-export default Super;

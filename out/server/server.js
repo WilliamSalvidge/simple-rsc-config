@@ -9,6 +9,13 @@ server.on('request', async (req, res)=>{
     // do stuff
     if (req.url === undefined) return res.end('no path');
     if (consts.ui.test(req.url)) {
+        if (/super\.js$/.test(req.url)) {
+            console.log('in super ui');
+            const index = await fs.readFile('../ui/super.js', 'utf8');
+            res.setHeader('content-type', 'text/javascript');
+            res.write(index);
+            return res.end();
+        }
         console.log('in ui');
         const index = await fs.readFile('../ui/index.js', 'utf8');
         res.setHeader('content-type', 'text/javascript');
