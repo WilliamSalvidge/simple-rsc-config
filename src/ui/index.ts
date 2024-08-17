@@ -7,15 +7,7 @@ const initialContentPromise = createFromFetch(initialContentFetchPromise, {
 	moduleBaseURL: `${window.location.origin}/ui`,
 })
 
-function Root() {
-	const content = use(initialContentPromise)
-	return content
-}
+const Root = () => use(initialContentPromise);
 
 const rootEl = createRoot(document.getElementById('root'))
-rootEl
-  .render(h('div', null,
-			          h(Suspense, { fallback: h('p', null, 'Loading...') },
-				          h(Root),
-			          ),
-		          ));
+rootEl.render(h(Root));
